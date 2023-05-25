@@ -1,0 +1,311 @@
+/*CSS kod för Historia hemsidan*/
+/*En font som passar historia*/
+@font-face {
+    font-family: oldEnglish;
+    src: url(OldeEnglish.ttf);
+}
+/*CSS kod för navigeringsfält*/
+li {
+    display: inline;
+    gap: 40px;
+  }
+    a {
+      display: block inline;
+      padding: 8px;
+      background-color: #f0efef;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+    .navigationbar {
+      background-color: gray;
+      padding-top: 0.2%;
+      padding-bottom: 0.2%;   
+  }
+/*Bakgrundsbilden för historia*/
+  .BakgrundsbildH {
+    height: 50%;
+    width: 100%;
+    align-content: center;
+    background-image: url(Nattvarden.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 33%;
+  }
+  /*Historia rubriken med historie fonten*/
+.hh1 {
+    margin: auto;
+    text-align: center;
+    font-family: oldEnglish, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+}
+* {box-sizing:border-box}
+
+/*Kod för slideshowen på historian*/
+/* Slideshow container */
+.slideshow-container {
+  max-width: 300px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgb(155, 155, 155);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/*Info boxar om historiska karaktärer*/
+.infoh2 {
+  text-decoration: underline;
+}
+.infobox {
+  display: grid;
+  column-gap: 5%;
+  grid-template-columns: auto auto auto;
+  padding: 10%;
+}
+
+/*CSS kod för Spel hemsidan*/
+
+/* Slideshow container */
+.sslideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgb(155, 155, 155);
+  opacity: 0.5;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/*Info box för spelen*/
+.sInfobox{
+  border: white 2px dotted;
+  color: white;
+  display: grid;
+  column-gap: 10%;
+  grid-template-columns: auto auto auto;
+  padding: 10%;
+}
+/*kod för bakgrunden av spel hemsidan*/
+.sBody{
+  background-image: url(CsGo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*kod för att optimisera hemsidan för andra devicesd*/
+@media screen and (max-width: 600px) {
+  .sBody{
+    background-image: url(Amongus.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .sInfobox{
+    column-gap: 5%;
+    border: none;
+    display: grid;
+    grid-template-columns: auto;
+    color: aqua;
+  } 
+  iframe{
+    height: 200px;
+  }
+  .navigationbar{
+    background-color: black;
+    padding-bottom: 0.2%;
+    padding-top: 0.2%;
+  }
+  a {
+    color: white;
+    background-color: green;
+    margin: auto;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 8px;
+    text-decoration: none;
+  }
+  .infobox{
+    column-gap: 5%;
+    display: grid;
+    grid-template-columns: auto;
+  }
+  li{
+    margin: auto;
+  }
+  .infoh2{
+    margin: auto;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1000px){
+  .infobox{
+    column-gap: 5%;
+    display: grid;
+    grid-template-columns: auto;
+}
+.infoh2{
+  margin: auto;
+  text-align: center;
+}
+.sInfobox{
+  column-gap: 5%;
+  border: none;
+  display: grid;
+  grid-template-columns: auto;
+} 
+}
+/*CSS kod för min Contact hemsida*/
+.cInfobox{
+  border-bottom: black solid;
+  display: grid;
+  column-gap: 0%;
+  grid-template-columns: 60%;
+  padding: 1%;
+}
+.ommig{
+  padding-left: 1%;
+}
+a:hover{
+  background-color: #717171;
+  color: white;
+}

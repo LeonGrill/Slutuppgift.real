@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia</title>
+    <link rel="stylesheet" href="ThugVictim.css">
+    <style>
+      /*css kod för dark/light mode*/
+      body {
+        background-color: white;
+        color: black;
+      }
+      button {
+        padding: 0.6%;
+      }
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
+      </style>
+</head>
+<body>
+    <div class="Historia">
+          <!--Koden för navigationsbaren med både knappar för att byta mellan hemsidorna och för musiken/dark och light mode-->
+        <div class="navigationbar">
+            <ul>
+                <li><a href="Index.html">Historia</a></li>  
+                <li><a href="spel.html">Spel</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a onclick="myFunction()">dark/light mode</a></li>
+                <il><a onclick = "playaudio()" type = "button" > Play the Audio</a></il>
+                <il><a onclick = "pauseaudio()" type = "button" > Pause the Audio</a></il>
+                <il><a onclick = "stopaudio()" type = "button" > Stop the Audio</a></il>
+                <il><a onclick = "stopaudio()" type = "button" > Stop the Audio</a></il>
+                <!--Låten för bakgrunds musiken-->
+                <audio id = "idAudio">
+                <source src = "A Little Night Music - Wolfgang Amadeus Mozart.mp3" type = "audio/ogg" >
+              </audio>
+            </ul> 
+        </div>         
+        <div class="BakgrundsbildH">
+        </div>
+        <div class="hh1">
+            <h1>Historia</h1>
+        </div>
+        <!--Html kod för Slideshown-->
+          <div class="slideshow-container">
+          <!--Gustavus Adolphus slide-->
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="Gustavus adolphus.jpg" style="width:100%">
+            <div class="text">Gustavus Adolphus</div>
+          </div>
+          <!--William The Conqueror Slide-->
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="WilliamCon.jpg" style="width:100%">
+            <div class="text">William the Conqueror</div>
+          </div>
+          <!--Moses Slide-->
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="Moses.jpg" style="width:100%">
+            <div class="text">Moses</div>
+          </div>
+          <!--Slideshow knapparna-->
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+          
+          </div>
+          <br>
+          <!--Punkterna under slideshown som man kan klicka på-->
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+          <!--Diven för infon om de historiska karaktärerna-->
+          <div class="infobox">
+            <!--Fakta om Gustav-->
+            <div class="GustavusAdolphus">
+            <h2 class="infoh2">Gustavus Adolphus</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis doloribus adipisci optio laboriosam quod et facere, inventore nobis autem id nemo odio ipsum veniam fugiat dolor distinctio rerum harum. Culpa.</p>
+            </div>
+            <!--Fakta om William-->
+            <div class="WilliamCon">
+            <h2 class="infoh2">William the Conqueror</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas magnam omnis saepe eligendi optio, eius quidem soluta atque laboriosam nobis blanditiis neque odio eum quis vitae, repellendus quibusdam commodi obcaecati?</p>
+            </div>
+            <!--Fakta om Moses-->
+            <div class="Moses">
+            <h2 class="infoh2">Moses</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed laboriosam, perspiciatis fuga cumque architecto aut sint aperiam voluptates maiores quae unde nemo, sit animi molestias consequuntur reiciendis ut dignissimos!</p>
+            </div>
+          </div>
+          
+          <script>
+            /*JS för Slideshowen*/
+          let slideIndex = 1;
+          showSlides(slideIndex);
+          
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+          
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+          
+          function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+          }
+        /*JS för Darkmode*/
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        /*JS för paus, stop och play knapparna som musik*/
+        var a = document.getElementById("idAudio");
+		function playaudio() {
+			a.play();
+		}
+		function pauseaudio() {
+			a.pause();
+		}
+		function stopaudio() {
+			a.pause();
+			a.currentTime = 0;
+		}
+          </script>          
+      </div>
+</body>
+</html>

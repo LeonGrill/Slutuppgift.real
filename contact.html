@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="ThugVictim.css">
+    <style>
+        /*css kod för dark/light mode*/
+        body {
+          background-color: white;
+          color: black;
+        }
+        button {
+        padding: 0.6%;
+        }
+        .dark-mode {
+          background-color: black;
+          color: white;
+        }
+        /*byter bakgrundsfärg på hemsidan för mobiler*/
+        @media screen and (max-width: 600px) {
+            body{
+                background-color: aqua;
+            }
+            }
+    </style>
+</head>
+<body>
+    <!--Koden för navigationsbaren med både knappar för att byta mellan hemsidorna och för musiken/dark och light mode-->
+    <div class="navigationbar">
+        <ul>
+            <li><a href="Index.html">Historia</a></li>
+            <li><a href="spel.html">Spel</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a onclick="myFunction()">dark/light mode</a></li>
+            <il><a onclick = "playaudio()" type = "button" > Play the Audio</a></il>
+            <il><a onclick = "pauseaudio()" type = "button" > Pause the Audio</a></il>
+            <il><a onclick = "stopaudio()" type = "button" > Stop the Audio</a></il>
+            <!--Låten för bakgrunds musiken-->
+            <audio id = "idAudio">
+            <source src = "A Little Night Music - Wolfgang Amadeus Mozart.mp3" type = "audio/ogg" >
+            </audio>
+        </ul> 
+    </div>  
+
+    <h1 class="ommig">Kontakta mig:</h1>
+    <div class="cInfobox">
+        <image src="avatar.webp" style="width: 30%;"></image>
+        <p class="namn">Namn: John Johnsson <br> Telefonnummer: 073-000-00-00 <br> Mail: Johnsson@gmail.com <br> Adress: Johnjohnssonsväg 51</p>
+    </div>
+    <script>
+        /*JS för Darkmode*/
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        /*JS för paus, stop och play knapparna som musik*/
+		var a = document.getElementById("idAudio");
+		function playaudio() {
+			a.play();
+		}
+		function pauseaudio() {
+			a.pause();
+		}
+		function stopaudio() {
+			a.pause();
+			a.currentTime = 0;
+		}
+    </script>
+</body>
